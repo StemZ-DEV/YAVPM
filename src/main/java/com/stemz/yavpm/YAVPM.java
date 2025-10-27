@@ -1,5 +1,7 @@
 package com.stemz.yavpm;
 
+import com.stemz.yavpm.config.ConfigManager;
+import com.stemz.yavpm.features.RightClickHarvest;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,5 +14,11 @@ public class YAVPM implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        LOGGER.info("Initializing YAVPM");
+        ConfigManager.load();
+
+        RightClickHarvest.register();
+
+        LOGGER.info("Initialized YAVPM");
 	}
 }

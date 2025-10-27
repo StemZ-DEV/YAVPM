@@ -36,5 +36,13 @@
 	},
 	"suggests": {
 		"another-mod": "*"
-	}
+	},
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/xrHHhjhajU"
+      },
+      "badges": [ "client", "server" ]
+    }
+  }
 }
