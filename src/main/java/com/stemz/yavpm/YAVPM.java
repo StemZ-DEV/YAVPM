@@ -19,6 +19,9 @@ public class YAVPM implements ModInitializer {
 
         RightClickHarvest.register();
 
+
+        ModItems.init();
+
         LOGGER.info("Initialized YAVPM");
 	}
 }
