@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "yavpm",
+	"version": "${version}",
+	"name": "YAVPM",
+	"description": "Yet Another Vanilla Plus Mod - An upgraded vanilla+ experience.. what Mojang should've done!",
+	"authors": [
+		"StemZ"
+	],
+	"contact": {
+		"homepage": "https://x.com/StemZ_DEV",
+		"sources": "https://github.com/StemZ-DEV"
+	},
+	"license": "MIT",
+	"icon": "assets/yavpm/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.stemz.yavpm.YAVPM"
+		],
+		"fabric-datagen": [
+			"com.stemz.yavpm.YAVPMDataGenerator"
+		],
+      "client": [
+        "com.stemz.yavpm.YAVPMClient"
+      ]
+	},
+	"mixins": [
+		"yavpm.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
