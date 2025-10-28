@@ -21,6 +21,7 @@ public class YAVPM implements ModInitializer {
 
 
         ModItems.init();
+        ModBlocks.init();
 
         LOGGER.info("Initialized YAVPM");
 	}
