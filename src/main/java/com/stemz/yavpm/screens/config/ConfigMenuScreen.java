@@ -1,17 +1,19 @@
 package com.stemz.yavpm.screens.config;
 
+import com.stemz.yavpm.config.ConfigManager;
+import com.stemz.yavpm.config.YAVPMConfig;
 import com.stemz.yavpm.screens.components.SimpleButton;
 import com.stemz.yavpm.screens.components.SimpleToggle;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
 
 @Environment(EnvType.CLIENT)
 public class ConfigMenuScreen extends Screen {
     private final Screen parent;
+    YAVPMConfig config = ConfigManager.get();
 
     public ConfigMenuScreen(String title, Screen parent) {
         super(Text.of(title));
@@ -25,9 +27,9 @@ public class ConfigMenuScreen extends Screen {
 
         });
 
-        SimpleToggle toggle = new SimpleToggle(10, 35, 90, 22, Text.literal("Toggle"), () -> {
+        SimpleToggle toggle = new SimpleToggle(10, 35, 90, 22, Text.literal("Toggle"), state -> {
 
-        }, true);
+        }, config.rightClickHarvest);
 
         addDrawableChild(btn);
         addDrawableChild(toggle);

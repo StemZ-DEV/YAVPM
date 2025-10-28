@@ -8,12 +8,14 @@ import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.text.Text;
 
+import java.util.function.Consumer;
+
 @Environment(EnvType.CLIENT)
 public class SimpleToggle extends ClickableWidget {
-    private final Runnable onClick;
+    private final Consumer<Boolean> onClick;
     private boolean toggled = false;
 
-    public SimpleToggle(int x, int y, int width, int height, Text text, Runnable onClick, boolean isToggled){
+    public SimpleToggle(int x, int y, int width, int height, Text text, Consumer<Boolean> onClick, boolean isToggled){
         super(x, y, width, height, text);
         this.onClick = onClick;
         this.toggled = isToggled;
@@ -69,7 +71,7 @@ public class SimpleToggle extends ClickableWidget {
         if(this.active && this.visible && this.isHovered()) {
             this.playDownSound(MinecraftClient.getInstance().getSoundManager());
             this.toggled = !this.toggled;
-            this.onClick.run();
+            this.onClick.accept(this.toggled);
             return true;
         }
         return false;
