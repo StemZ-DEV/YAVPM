@@ -58,7 +58,7 @@ public class SimpleToggle extends ClickableWidget {
 
         // Indicator "handle thing"
         int handleSize = 11;
-        int handleX = this.toggled ? indicatorX + handleSize - (handleOffset - 1) : indicatorX;
+        int handleX = this.toggled ? indicatorX + handleSize - (handleOffset) : indicatorX;
         ctx.fill(handleX, indicatorY - (handleOffset - 1), handleX + handleSize, indicatorY + handleSize - (handleOffset - 1), 0xFFDDDDDD);
         ctx.drawBorder(handleX, indicatorY - (handleOffset - 1), handleSize, handleSize, 0xFF1E1E1F);
         ctx.fill(handleX, indicatorY + handleSize - (1 + handleOffset), handleX + handleSize, indicatorY + handleSize - handleOffset, 0x77000000);
