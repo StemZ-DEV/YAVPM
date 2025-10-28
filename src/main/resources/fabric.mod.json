@@ -23,6 +23,9 @@
 		],
       "client": [
         "com.stemz.yavpm.YAVPMClient"
+      ],
+      "modmenu": [
+        "com.stemz.yavpm.integrations.ModMenuEntryPoint"
       ]
 	},
 	"mixins": [
